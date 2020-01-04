@@ -1,6 +1,13 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
     </head>
     <body>
 
@@ -8,12 +15,34 @@
 
         <div class="content">
 
-            <form id="add-cafe-form"></form>
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe city">
+                <button>Add Cafe</button>
+            </form>
 
             <ul id="cafe-list"></ul>
 
         </div>
+        
 
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDkD8ciM8eRsdavkBzQjX2oMPnrPuBslqE",
+                authDomain: "lazy-firestore-poc.firebaseapp.com",
+                databaseURL: "https://lazy-firestore-poc.firebaseio.com",
+                projectId: "lazy-firestore-poc",
+                storageBucket: "lazy-firestore-poc.appspot.com",
+                messagingSenderId: "979117610894",
+                appId: "1:979117610894:web:601d8df614b1bc456276df",
+                measurementId: "G-RT6WBQ466X"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const db = firebase.firestore()
+        </script>
         <script src="app.js"></script>
     </body>
 </html>
